@@ -76,6 +76,13 @@ module RSpec
           "throw #{expected}"
         end
 
+        # @api private
+        # Indicates this matcher matches against a block.
+        # @return [True]
+        def block_matcher?
+          true
+        end
+
       private
 
         def expected(symbol_desc = 'a Symbol')

@@ -151,6 +151,13 @@ module RSpec
           define_method(:diffable?) { true }
         end
 
+        # Declares that the matcher is a block matcher. This is required when you want
+        # your matcher to be usable for block expectations
+        # (e.g. `expect { do_something }.to matcher`).
+        def block_matcher
+          define_method(:block_matcher?) { true }
+        end
+
         # Convenience for defining methods on this matcher to create a fluent
         # interface. The trick about fluent interfaces is that each method must
         # return self in order to chain methods together. `chain` handles that

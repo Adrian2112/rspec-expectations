@@ -61,6 +61,11 @@ module RSpec
           !matches?(given_proc, :negative_expectation)
         end
 
+        # @private
+        def block_matcher?
+          true
+        end
+
         # @api private
         # @return [String]
         def failure_message

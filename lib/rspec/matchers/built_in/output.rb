@@ -60,6 +60,13 @@ module RSpec
           true
         end
 
+        # @api private
+        # Indicates this matcher matches against a block.
+        # @return [True]
+        def block_matcher?
+          true
+        end
+
       private
 
         def captured?
